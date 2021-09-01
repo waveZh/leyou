@@ -42,7 +42,7 @@ public class BrandController {
         if (CollectionUtils.isEmpty(result.getItems())){
             return ResponseEntity.notFound().build();
         }
-        //返回结果集
+        //返回结果集 结果集不为空
         return ResponseEntity.ok(result);
     }
 }
