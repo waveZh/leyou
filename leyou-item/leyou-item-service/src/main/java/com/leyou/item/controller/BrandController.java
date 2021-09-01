@@ -43,6 +43,7 @@ public class BrandController {
             return ResponseEntity.notFound().build();
         }
         //返回结果集 结果集不为空
+        //返回结果集 结果集为空
         return ResponseEntity.ok(result);
     }
 }
