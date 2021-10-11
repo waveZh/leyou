@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 @Service
 public class BrandService {
@@ -52,5 +53,21 @@ public class BrandService {
         PageInfo<Brand> pageInfo = new PageInfo<>(brands);
         // 包装成分页结果集返回
         return new PageResult<>(pageInfo.getTotal(), pageInfo.getList());
+    }
+
+    /**
+     * 新增品牌
+     * @param brand
+     * @param cids
+     */
+    public void saveBrands(Brand brand, List<Long> cids) {
+
+        //先增加brand
+        Boolean flag = this.brandMapper.insertSelective(brand) == 1;
+
+        //新增中间表
+        cids.forEach(cid -> {
+            this.brandMapper.insertCategoryAndBrand(cid, brand.getId());
+        });
     }
 }
