@@ -66,8 +66,12 @@ public class BrandService {
         Boolean flag = this.brandMapper.insertSelective(brand) == 1;
 
         //新增中间表
-        cids.forEach(cid -> {
-            this.brandMapper.insertCategoryAndBrand(cid, brand.getId());
+        cids.forEach(new Consumer<Long>() {
+            @Override
+
+            public void accept(Long cid) {
+                BrandService.this.brandMapper.insertCategoryAndBrand(cid, brand.getId());
+            }
         });
     }
 }
