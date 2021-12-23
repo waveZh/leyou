@@ -12,3 +12,4 @@ eureka:
   server:
     enable-self-preservation: false # 关闭自我保护
     eviction-interval-timer-in-ms: 10000 # 每隔5秒钟，进行一次服务列表的清理
+  
