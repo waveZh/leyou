@@ -1,5 +1,6 @@
 package com.leyou.item.controller;
 
+import com.leyou.item.mapper.SpecParamMapper;
 import com.leyou.item.service.SpecificationService;
 import com.leyou.pojo.SpecGroup;
 import com.leyou.pojo.SpecParam;
