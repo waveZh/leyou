@@ -2,8 +2,8 @@ package com.leyou.item.service;
 
 import com.leyou.item.mapper.GroupMapper;
 import com.leyou.item.mapper.SpecParamMapper;
-import com.leyou.pojo.SpecGroup;
-import com.leyou.pojo.SpecParam;
+import com.leyou.item.pojo.SpecGroup;
+import com.leyou.item.pojo.SpecParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

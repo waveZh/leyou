@@ -1,4 +1,4 @@
-package com.leyou.pojo;
+package com.leyou.item.pojo;
 
 import javax.persistence.*;
 

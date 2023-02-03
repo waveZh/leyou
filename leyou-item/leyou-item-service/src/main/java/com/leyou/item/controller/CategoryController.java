@@ -1,12 +1,11 @@
 package com.leyou.item.controller;
 
 import com.leyou.item.service.CategoryService;
-import com.leyou.pojo.Category;
+import com.leyou.item.pojo.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
