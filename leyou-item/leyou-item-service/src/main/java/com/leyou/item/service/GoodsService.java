@@ -27,7 +27,6 @@ public class GoodsService {
         Example.Criteria criteria = example.createCriteria();
         // 搜索条件
         if (StringUtils.isNotBlank(key)){
-            criteria.andLike()
         }
 
         // 分页条件
