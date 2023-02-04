@@ -6,6 +6,7 @@ import com.leyou.item.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -21,11 +22,11 @@ public class GoodsController {
             @RequestParam(value = "rows",defaultValue = "5") Integer rows
 
     ){
-        PageResult<SpuBo> PageResult = this.goodsService.querySpuBoByPage(key, saleable, page, rows);
-
-
-
-        return null;
+        PageResult<SpuBo> pageResult = this.goodsService.querySpuBoByPage(key, saleable, page, rows);
+        if (CollectionUtils.isEmpty(pageResult.getItems())){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(pageResult);
     }
 
 
