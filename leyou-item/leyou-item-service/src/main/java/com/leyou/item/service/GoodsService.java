@@ -24,7 +24,7 @@ public class GoodsService {
 
     public PageResult<SpuBo> querySpuBoByPage(String key, Boolean saleable, Integer page, Integer rows) {
         Example example = new Example(Spu.class);
-        Example.Criteria criteria = example.createCriteria();
+
         // 搜索条件
         if (StringUtils.isNotBlank(key)){
         }
